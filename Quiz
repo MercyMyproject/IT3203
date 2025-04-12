@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title> Self Assesement Quiz</title>
+<style>
+#quizmain {
+font-family: "Segoe UI" , Arial, sans-serif;
+width:100%;
+xxbackground-color:#fff;
+}
+#qtext {
+font-size:18px;
+}
+#quizform {
+margin-top:40px;
+}
