@@ -1,16 +1,119 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
 <head>
-<title> Self Assesement Quiz</title>
 <style>
-#quizmain {
-font-family: "Segoe UI" , Arial, sans-serif;
-width:100%;
-xxbackground-color:#fff;
+body {background-color: black;}
+h1 {color: blue;}
+p {color: white;}
+</style>
+
+<title> Self Assesement Quiz</title>
+<body>
+<nav>
+<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="quiz.html">Quiz</a></li>
+
+</ul>
+</nav>
+
+<div id="quiz"></div>
+<button id="submit">Get Results</button>
+<div id="results"></div>
+
+function generatequiz(questions, quizContainer, resultsContainer, submitButton){
+function showQuestions(questions, quizContainer){
+//
 }
-#qtext {
-font-size:18px;
+function showResults(questions, quizContainer, resultsContainer){
+//
 }
-#quizform {
-margin-top:40px;
+showQuestions(questions, quizContainer);
+//
+submitButton.onClick = function(){
+showResults(questions, quizContainer, resultsContainer);
 }
+}
+
+var myQuestions = [ 
+{
+question: "What is Web application Security?",
+answers: {
+a:'is the parctice of protecting web applications from cyber threats',
+b:'building websites',
+c: 'upgrading software',
+},
+correctAnswer: 'a'
+},
+{
+question: "When is web application security needed?",
+answers: {
+a:'Sometimes',
+b:'Always', 
+c:"Never',
+},
+correctAnswer: 'b'
+},
+{
+question: "Why web application security is crucial?",
+answers: {
+a:'preventing attacks',
+b:'protecting senstive data',
+c: 'implementing website',
+d:'a and b',
+},
+correctAnswer: 'd'
+},
+{
+question:"How to practice Web application security?",
+answers:{
+a:'Enforce Authorization',
+b:'unsecure website',
+c:'using unencrypted website',
+},
+correctAnswer: 'a'
+},
+{
+question: "Fill in the blank, what is web application secuirty requirements?',
+answer:{
+correctAnswer:'Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS).'
+},
+];
+
+function showQuestions, (questions, quizContainer){
+//
+var output =[];
+var answers;
+//
+for(var i=0; i<questions.length; i++){
+//
+answers = [];
+//
+for(letter in questions[i].answers){
+//
+answers.push(
+'<label>'
++'<input type="radio" name="question'+i+'" value="'+letter+'">'
++ letter + ':'
++ questions[i].answers[letter]
++'</labels>'
+);
+}
+//
+output.push(
+'<div class="question">' + questions[i].question + '</div>'
++ '<div class="answers">' + answers.join('') + '</div>'
+);
+}
+//
+quizContainer.innerHTML = output.join('');
+}
+function showResults(questions, quizContainer, resultContainer){
+//
+
+
+
+</head>
+</body>
+</html>
