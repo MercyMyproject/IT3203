@@ -1,6 +1,4 @@
-<div id="quiz"></div>
-<button id="submit">Get Results</button>
-<div id="results"></div>
+
 
 function generatequiz(questions, quizContainer, resultsContainer, submitButton){
 function showQuestions(questions, quizContainer){
@@ -129,5 +127,7 @@ var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 //
+if (location.pathname ==='/quiz.html'){
+}
 generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 
