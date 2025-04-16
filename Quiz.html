@@ -154,7 +154,9 @@ var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 //
  
-
+window.addEventListener("load",() => {
+  console.log("This function is executed once the page is fully loaded");
+});
 
 generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 </script>  
