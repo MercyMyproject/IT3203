@@ -127,7 +127,7 @@ var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 //
-if (location.pathname ==='/quiz.html'){
+ (location.pathname ==='/quiz.html'){
 }
 generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 
