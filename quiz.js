@@ -129,5 +129,11 @@ var submitButton = document.getElementById('submit');
 //
  (location.pathname ==='/quiz.html'){
 }
+let quiz = new quiz();
+Let quiz = quiz.toLocalQuizString();
+document.getElementById("quiz").innerText = quiz;
+
+
+
 generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 
