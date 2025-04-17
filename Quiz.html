@@ -1,98 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewPort" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-  
- <style>
-body {background-color: powderblue;}
-h1 {color: blue;}
-p {color: white;}
-   body {
-     display: flex;
-     justify-content: center;
-     height: 100vh;
-     margin: 0;
-     padding:0;
-   }
-   .quiz-container{
-     display:flex;
-     flex-direction:column;
-     width:30rem;
-     max-width: 80%;
-     background-color: white;
-     border-radius:0.5rem;
-     box-shadow: 0 0 0.6rem 0.1rem;
-   }
-  #question-container{
-    flex-direction:column;
-    gap: 2rem;
-    padding:2rem;
-  }
-   #question{
-     text-align: center;
-     margin-bottom:0;
-     margin-top: 1rem;
-   }
-   #answer-buttons{
-     display:flex;
-     flex-direction:column;
-     align-items: flex-start;
-     gap: 1.2rem;
-     margin-bottom: 1rem;
-   }
-   .input-group {
-     display: flex;
-     align-items: center;
-     gap: 1rem;
-   }
-   input {
-     width: fit-content;
-   }
-   .btn{
-     padding: 1.5rem;
-     background-color:powderblue;
-     color:white;
-     
-     
-       
-     
-</style>
-
-<title> Self Assesement Quiz</title>
+  <title>Interactive Quiz</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div class="quiz-container">
-    <div id="question-container">
-      <h3 id="question">Question</h3>
-      <div id="answer-buttons"></div>
-    </div>
+  <div id="quiz">
+    <h1>Interactive Quiz | By CodePicker</h1>
+    <div id="question"></div>
+    <div id="options"></div>
+    <button id="submit">Submit</button>
   </div>
-  <button id="next-btn" class="btn hide">Next</button>
-  <div id="result" class="hide"></div>
-  <button id="restart-btn" class="btn hide">Restart</button>
-  
+
+  <script src="script.js"></script>
 </body>
-
-  
-<nav>
-<ul>
-
-<li><a href="index.html">Home</a></li>
-<li><a href="aboutme.html">About Me</a></li>
-<li><a href="reference.html">References</a></li>
-<li><a href="quiz.html">Quiz</a></li>
-<li><a href="contact.html">Contact</a></li>
-
-</ul>
-</nav>
-  
-  
-
-
-
-
-
 </html>
