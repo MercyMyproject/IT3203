@@ -1,4 +1,24 @@
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function generatequiz(questions, quizContainer, resultsContainer, submitButton){
 function showQuestions(questions, quizContainer){
 //
