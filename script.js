@@ -7,7 +7,7 @@ const quizData = [
     
     {
       question: "When is web application security needed?",
-      options: ["a.sometimes", "b.always", "c.never"],
+      options: ["a. sometimes", "b. always", "c. never"],
       answer: "b"
     },
     
@@ -35,7 +35,7 @@ const quizData = [
   const questionElement = document.getElementById("question");
   const optionsElement = document.getElementById("options");
   const submitButton = document.getElementById("submit");
-  
+  const restartButton = document.getElementById("restart");
   let currentQuestion = 0;
   let score = 0;
   
