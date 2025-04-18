@@ -8,13 +8,13 @@ const quizData = [
     {
       question: "When is web application security needed?",
       options: ["a.sometimes", "b.always", "c.never"],
-      answer: "always"
+      answer: "b"
     },
     
     {
     question: "Why web application security is crucial?",
     options: ["a.preventing attacks", "b.protecting sensitive data", "c.implementing website", "d. a and b"],
-    answer: "a and b"
+    answer: "d"
 
     },
     
@@ -66,8 +66,6 @@ const quizData = [
       showQuestion();
     } else {
       showResult();
-    }
-      showRestart();
   }
 }
   function showResult() {
