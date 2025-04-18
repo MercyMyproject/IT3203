@@ -26,7 +26,7 @@ const quizData = [
     
     {
     question: "Fill in the blank, what is web application security requirements?",
-    options: [" ","Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)."],
+    options: ["                                  "],
     answer: "Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)."
     },
     
