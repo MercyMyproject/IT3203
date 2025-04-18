@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <body onload="NextQuestion(0)">
+    <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+		<li><a href="aboutme.html">About Me</a></li>
+		<li><a href="reference.html">References</a></li>
+		<li><a href="quiz.html">Quiz</a></li>
+		<li><a href="contact.html">Contact</a></li>
+    </ul>
+   </nav>
+	
+    <body onload="NextQuestion(5)">
         <main>
-            //
+            
             <div class=modal-container" id="score-modal">
                 <div class="modal-content-container">
                     <h1>Quiz Completed.</h1>
@@ -20,21 +30,12 @@
                 </div>
             </div>
             
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-		<li><a href="aboutme.html">About Me</a></li>
-		<li><a href="reference.html">References</a></li>
-		<li><a href="quiz.html">Quiz</a></li>
-		<li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
         
-    //
+    
         <div class="game-quiz-container">
             <div class="game-details-container">
-                <h1>Score :<span id="player-score"></span> / 10</h1>
-                <h1>Question :<span id="question-number"></span> / 10</h1>
+                <h1>Score :<span id="player-score"></span> / 5</h1>
+                <h1>Question :<span id="question-number"></span> / 5</h1>
             </div>
 
             <div class="game-question-container">
@@ -64,7 +65,8 @@
                 </span>
                 <span>
                   <input type="radio" id="option-five" name="option" class="radio" value="correctAnswer" />
-                    //
+                 <label for="option-five" class="option" id="option-five-label"></label>
+
                 </span>
             </div>
             <div class="next-button.container">
