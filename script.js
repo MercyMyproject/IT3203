@@ -36,8 +36,8 @@ const quizData = [
   const optionsElement = document.getElementById("options");
   const submitButton = document.getElementById("submit");
   
-  let currentQuestion = 0;
-  let score = 0;
+  let currentQuestion = 5;
+  let score = 5;
   
   function showQuestion() {
     const question = quizData[currentQuestion];
