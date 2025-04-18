@@ -1,114 +1,166 @@
-let Questions = [];
-const ques = document.getElementById("ques")
-
-async function fetchQuestions() {
-    try {
-        const response = await
-         fetch('https://opentdb.com/api.php?amount=10');
-        if (!response.ok) {
-            throw new Error(`Something went wrong!!
-        Unable to fecth the data`);
+//Questions
+const questions = [
+    {
+        question:"What is web application security?",
+    optionA: "is the parctice of protecting web applications from cyber threats",
+    optionB: "building websites",
+    optionC: "upgrading software,
+        correctOption: "optionA"
+},
+{
+    question:"When is web application security needed?",
+         optionA: "Sometimes",
+    optionB: "Always",
+    optionC: "Never",
+        correctOption: "optionB"
+},
+{
+    question:"Why web application security is crucial"?
+     optionA: "Preventing attacks",
+    optionB: "Protecting sensetive data",
+    optionC: "implementing website",
+        correctOption: "optionA and B"
+},
+{
+    question:"How to practice web application security?",
+     optionA: "Enforce authorization",
+    optionB: "Unsecure website",
+    optionC: "Using unencrypted website",
+        correctOption: "optionA"
+},
+{
+     question:"Fill in the blank, what is web application security requirements?",
+ 
+        correctAnswer: "Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)."
+}
+]
+//
+let shuffledQuestions = [] 
+function handleQuestions() {
+    while(shufffledQuestions.length <=9) {
+        const random = questions[Math.floor(Math.random() * questions.length)]
+        if (!shuffledQuestions.includes(random)){
+            shuffledQuestions.push(random)
         }
-        const data = await response.json();
-        Questions = data.results;
-    }
-    catch (error) {
-        console.log(error);
-        ques.innerHTML = `<h5 style='color: red'>
-        ${error}</h5>`;
     }
 }
-fetchQuestions();
+let questionNumber = 1 //holds question number
+let playerScore = 0 //holds the player score
+let wrongAttempt = 0 //
+let indexNumber = 0 //
 
-let currQuestion = 0
-let score = 0
+//function for displaying next question
+function NextQuestion(index){
+    handleQuestions()
+    const currentQuestion = shuffledQuestions[index]
+    document.getElementById("question-number").innerHTML = questionNumber
+    document.getElementById("player-score").innerHTML = playerScore
+    document.getElementById("display-question").innerHTML = currentQuestion.question;
+    document.getElementById("option-one-label").InnerHTML = currentQuestion.optionA;
+    document.getElementById("option-two-label").InnerHTML = currentQuestion.optionB;
+    document.getElementById("option-three-label").InnerHTML = currentQuestion.optionC;
+    document.getElementById("option-one-label").InnerHTML = currentQuestion.correctAnswer;
 
-if (Questions.length === 0) {
-    ques.innerHTML = `<h5>Please Wait!! 
-    Loading Questions...</h5>`
 }
+function checkForAnswer() {
+    const currentQuestion = shuffledQuestions[indexNumber] //
+    const currentQuestionAnswer = currentQuestion.correctOption //
+    const options = document.getElementsByName("option");
+    let correctOption = null
 
-function loadQues() {
-    const opt = document.getElementById("opt");
-    let currentQuestion = Questions[currQuestion].question;
-    if (currentQuestion.indexOf('&quot;') > -1) {
-        currentQuestion = currentQuestion
-            .replace(/&quot;/g, '\"');
-    }
-    if (currentQuestion.indexOf(''') > -1) {
-        currentQuestion = currentQuestion
-            .replace(/'/g, '\'');
-    }
-    ques.innerText = currentQuestion;
-    opt.innerHTML = ""
-    const correctAnswer = Questions[currQuestion]
-        .correct_answer;
-    console.log(Questions);
-    const incorrectAnswers = Questions[currQuestion]
-        .incorrect_answers;
-    const options = [correctAnswer, ...incorrectAnswers];
-    options.sort(() => Math.random() - 0.5);
+    //
     options.forEach((option) => {
-        if (option.indexOf('&quot;') > -1) {
-            option = option.replace(/&quot;/g, '\"');
+        if (option.value === currentQuestionAnswer) {
+            correctOption = option.labels[0].id
         }
-        if (option.indexOf(''') > -1) {
-            option = option.replace(/'/g, '\'');
-        }
-        const choicesdiv = document.createElement("div");
-        const choice = document.createElement("input");
-        const choiceLabel = document.createElement("label");
-        choice.type = "radio";
-        choice.name = "answer";
-        choice.value = option;
-        choiceLabel.textContent = option;
-        choicesdiv.appendChild(choice);
-        choicesdiv.appendChild(choiceLabel);
-        opt.appendChild(choicesdiv);
-    });
-}
-
-setTimeout(() => {
-    loadQues();
-    if (Questions.length === 0) {
-        ques.innerHTML = `<h5 style='color: red'>Unable 
-        to fetch data, Please try again!!</h5>`
-    }
-}, 2000)
-
-
-function loadScore() {
-    const totalScore = document.getElementById("score");
-    totalScore.textContent = `You scored ${score} out 
-    of ${Questions.length}`;
-    totalScore.innerHTML += "<h3>All Answers</h3>"
-    Questions.forEach((el, index) => {
-        totalScore.innerHTML += `<p>${index + 1}.
-         ${el.correct_answer}</p>`
     })
-}
 
-
-function nextQuestion() {
-    if (currQuestion < Questions.length - 1) {
-        currQuestion++;
-        loadQues();
-    } else {
-        document.getElementById("opt").remove()
-        document.getElementById("ques").remove()
-        document.getElementById("btn").remove()
-        loadScore();
+    //
+    if (option.checked === true && option.value === currentQuestionAnswer) {
+        document.getElementById(correctOption).style.backgroundColor = "powderblue"
+        playerScore++ //
+        indexNumber++ //
+        //
+        setTimeout(() => {
+            questionNumber++
+        }, 1000)
     }
-}
-
-function checkAns() {
-    const selectedAns = document.
-        querySelector('input[name="answer"]:checked').value;
-
-    if (selectedAns === Questions[currQuestion].correct_answer) {
-        score++;
-        nextQuestion();
-    } else {
-        nextQuestion();
+    //
+    else if (option.checked && option.value !== currentQuestionAnswer) {
+        const wrongLabelId = option.labels[0].id
+        document.getElementById(wrongLabelId).style.backgroundColor = "red"
+        document.getElementById(correctOption).style.backgroundColor = "blue"
+        wrongAttempt++
+        //
+        setTimeout(() => {
+            questionNumber++
+        }, 1000)
     }
-}
+    // 
+    function handleNextquestion() {
+        checkForAnswer()
+        unCheckRadioButtons()
+        setTimeout(() => {
+            if (indexNumber <=9) {
+                NextQuestion(indexNumber)
+            }
+            resetOptionBackground()
+        }, 1000);
+    }
+    //
+    function resetOptionBackground() {
+        const options = document.getElementsByName("option");
+        options.forEach((option) => {
+            document.getElementById(option.labels[0].id).style.backgroundColor = ""
+        })
+    }
+    //
+    function handleEndGame() {
+        let remark = null
+        let remarkColor = null
+        //
+        if (playerScore <= 2) {
+            remark = "Restart the quiz."
+            remarkColor = "red"
+        }
+        else if (playerScore >=4 && playerScore <3) {
+            remark = "First Attempts."
+            remarkColor = "orange"
+        }
+        else if (playerScore >= 5) {
+            remark = "Excellent!"
+            remarkColor = "green"
+        }
+        const playerGrade = (playerScore / 10) *100
+        //
+        document.getElementById('remarks').innerHTML = remark
+        document.getElementById('remarks').style.color = remarkColor
+        document.getElementById('grade-percentage').innerHTML = playerGrade
+        document.getElementById('wrong-answers').innerHTML = wrongAttempt
+        document.getElementById('right-answers').innerHTML = playerScore
+        document.getElementById('score-modal').style.display = "flex"
+    }
+    //
+    function closeScoreModal() {
+        questionNumber = 1
+        playerScore = 0
+        wrongAttempt - 0
+        indexNumber = 0
+        shuffledQuestions = []
+      NextQuestion(indexNumber)
+        document.getElementById('score-modal').style.display = "none"
+    }
+    //
+    function closeOptionModal() {
+        document.getElementById('option-modal').style.display = "none"
+    }
+    
+            
+
+    
+
+
+
+
+
+    
