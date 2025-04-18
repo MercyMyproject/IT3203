@@ -7,13 +7,13 @@ const quizData = [
     
     {
       question: "When is web application security needed?",
-      options: ["sometimes", "always", "never"],
+      options: ["a.sometimes", "b.always", "c.never"],
       answer: "always"
     },
     
     {
     question: "Why web application security is crucial?",
-    options: ["a.preventing attacks", "b.protecting sensitive data", "c.implementing website"],
+    options: ["a.preventing attacks", "b.protecting sensitive data", "c.implementing website", "d. a and b"],
     answer: "a and b"
 
     },
@@ -26,7 +26,7 @@ const quizData = [
     
     {
     question: "Fill in the blank, what is web application security requirements?",
-    options: [" "],
+    options: [" ","Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)."],
     answer: "Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)."
     },
     
@@ -67,8 +67,9 @@ const quizData = [
     } else {
       showResult();
     }
+      showRestart();
   }
-  
+}
   function showResult() {
     quiz.innerHTML = `
       <h1>Quiz Completed!</h1>
