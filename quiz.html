@@ -1,23 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	    <title> Quiz Assesement</title>
 </head>
 	<Style>
-		body {
-		background-color: powderblue;
-	    }
+		 {
+  box-sizing: border-box;
+}
+
 	
-	h1 {
-		color: black;
-		text-align: center;
-	  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+	/*style the header*/
 	
-	p { 
-		font-family: verdana;
-		font-size: 20px;
-	}
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+/* Create two columns*/
+	nav {
+  float: left;
+  width: 20%;
+  height: 300px; 
+  background: gray;
+  padding: 20px;
+}
+		/* Style the menu*/
+	nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px;
+}
+	
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+@media (max-width: 300px) {
+  nav, article {
+    width: 50%;
+    height: auto;
+  }
+}
 	</Style>
+		
     <nav>
     <ul>
         <li><a href="index.html">Home Page</a></li>
@@ -36,10 +86,21 @@
     <button id="submit">Submit</button>
      <div id="restart"></div>
   </div>	
+		
                    
     
         <script src="script.js"></script>
 	<link rel="stylesheet" href="style.css">
+
+		
+</section>
+</article>
+
+<footer>
+		<p>@2025 Web Application Security</p>
+</footer>
+
+		
 
     </body>
 </html>
