@@ -1,246 +1,83 @@
-<html>
+<!DOTYPE html>
+<html lang="en">
 <head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .quiz-container {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 600px;
-            padding: 20px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-        .question {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .option {
-            padding: 10px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .option:hover {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        .timer {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            color: #ff5722;
-        }
-
-        .result {
-            font-size: 1.5em;
-            color: #4caf50;
-            display: none;
-        }
-
-        .restart-btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 20px;
-            display: none;
-        }
-
-        .restart-btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+	    
+		<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+			    <title> Quiz Assesement</title>
 </head>
+	<Style>
 
+	/*style the header*/
+	
+header {
+          background-color: green;
+	  padding: 30px;
+	  text-align: center;
+	  font-size: 35px;
+	  color: white;
+	}
+
+			
+	@media (max-width: 600px) {
+         nav, article {
+	    width: 10%;
+	    height: auto;
+	 }
+	}
+		</Style>
+	</head>
+	<body>
+
+</style>
+	
+</head>
 <body>
-	<nav>
-		<ul>
-		        <li><a href="index.html">Home</a></li>
-			<li><a href="aboutme.html">About Me</a></li>
-   		        <li><a href="websecurity.html">Web Security</a></li>
-		        <li><a href="quiz.html">Quiz</a></li>
-		        <li><a href="reference.html">References</a></li>
-		</ul>
+		<header id="body-header">
+	
+    <nav>
 		
-	</nav>
-    <div class="quiz-container">
-        <div class="timer">Time Left: <span id="time">30</span>s</div>
-        <div class="question">Question will appear here</div>
-        <div class="options"></div>
-        <div class="result">Your score: <span id="score">0</span></div>
-        <button class="restart-btn">Restart Quiz</button>
-    </div>
-    <script>
-	    
-onst quizData = [
-    {
-      question: "What is web application security?",
-      options: ["a. the practice of protecting web applications from cyber threats", "b.building websites", "c. upgrading software"],
-      answer: "a.the practice of protecting web applications from cyber threats"
-    },
-    
-    {
-      question: "When is web application security needed?",
-      options: ["a. sometimes", "b. always", "c. never"],
-      answer: "b. always"
-    },
-    
-    {
-    question: "Why web application security is crucial?",
-    options: ["a.preventing attacks", "b.protecting sensitive data", "c.implementing website", "d. a and b"],
-    answer: "d. a and b"
-
-    },
-    
-    {
-    question: "How to practice web application security?",
-    options: ["a.enforce authorization", "b.unsecure website", "c.using unecrypted website"],
-    answer: "a.enforce authorization"
-    },
-    
-    {
-    question: "Fill in the blank, what is web application security requirements?",
-    options: [" Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)."
-    },                                  "],
-    answer: "Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)."
-    },
-    
-  ];
-  
-  let currentQuestion = 0;
-        let score = 0;
-        let timeLeft = 60;
-        let timerInterval;
-        const timerEl = document.getElementById('time');
-        const questionEl = document.querySelector('.question');
-        const optionsEl = document.querySelector('.options');
-        const resultEl = document.querySelector('.result');
-        const scoreEl = document.getElementById('score');
-        const restartBtn = document.querySelector('.restart-btn');
-
-        // Function to load the question
-        function loadQuestion() {
-            if (currentQuestion >= quizData.length) {
-                endQuiz();
-                return;
-            }
-            clearInterval(timerInterval);
-            timeLeft = 60;
-            timerEl.textContent = timeLeft;
-            startTimer();
-            const currentQuiz = quizData[currentQuestion];
-            questionEl.textContent = currentQuiz.question;
-            optionsEl.innerHTML = ''; // Clear previous options
-            currentQuiz.options.forEach(option => {
-                const button = document.createElement('button');
-                button.classList.add('option');
-                button.textContent = option;
-                button.onclick = () => checkAnswer(option);
-                optionsEl.appendChild(button);
-            });
-        }
-
-        // Check the answer
-        function checkAnswer(selectedOption) {
-            if (selectedOption === quizData[currentQuestion].answer) {
-                score++;
-                }
-            currentQuestion++;
-            loadQuestion();
-        }
-
-        // Start the timer
-        function startTimer() {
-            timerInterval = setInterval(() => {
-                timeLeft--;
-                timerEl.textContent = timeLeft;
-                if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
-                    endQuiz();
-                }
-            }, 1000);
-        }
-
-        // End the quiz and show the results
-        function endQuiz() {
-            clearInterval(timerInterval);
-            questionEl.style.display = 'none';
-            optionsEl.style.display = 'none';
-            resultEl.style.display = 'block';
-            scoreEl.textContent = score;
-            restartBtn.style.display = 'block';
-        }
-
-        // Restart the quiz
-        restartBtn.addEventListener('click', () => {
-            // Reset variables
-            currentQuestion = 0;
-            score = 0;
-            timeLeft = 60;
-            timerEl.textContent = timeLeft;
-
-            // Reset the display
-            questionEl.style.display = 'block';
-            optionsEl.style.display = 'flex'; // Ensure options are displayed correctly
-            resultEl.style.display = 'none';
-            restartBtn.style.display = 'none';
-
-            // Load the first question
-            loadQuestion();
-        });
-	    
+    <ul>
+	                <li><a href="index.html">Home</a></li>
+			<li><a href="aboutme.html">About Me</a></li>
+			<li><a href="websecurity.html">Web Security</a></li>
+			<li><a href="quiz.html">Quiz</a></li>
+			<li><a href="reference.html">References</a></li>
+			
+			
+	    </ul>
+	   </nav>
+			
+          <main>
+		 
+	 <body>
+		 
+	    <div class="quiz-container">
+            <div class="timer">Time Left: <span id="time">60</span>s</div>
+	        <div class="question">Question will appear here</div>
+	        <div class="options"></div>
+	        <div class="result">Your score: <span id="score">0</span></div>
+	        <button class="restart-btn">Restart Quiz</button>
+	    </div>
+		    	
+	  </main>
+	                   
+   
         <script src="script.js"></script>
-        <link rel="stylesheet" href="style.css">
-	    
-        // Initialize the quiz with the first question
-loadQuestion();
-    </script>
-</body>
-</html>
+	
+	        <link rel="stylesheet" href="style.css">
+			
+	</section>
+	</article>
+	
+	<footer>
+			<p></p>
+	</footer>
+	
+		
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	</body>
+	</html>
 
 
 
