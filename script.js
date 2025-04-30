@@ -8,38 +8,38 @@ const quizData = [
             ],
     },
     {
-      question: "What is web application security?",
-      options: ["a. the practice of protecting web applications from cyber threats", "b.building websites", "c. upgrading software"],
-      answer: "a.the practice of protecting web applications from cyber threats"
+      Question: "When is web application security needed?",
+        Answer:[
+            { text:"a. sometimes", correct: false},
+            { text:"b. always", correct: true},
+            { text:"c. never", correct: false},
+            ],
+    },
+    {
+        Question: "Why web application security is crucial? select all that apply",       
+            { text:"a. preventing attacks", correct: true},
+            { text:"b. protecting sensitive data", correct: true},
+            { text:"c. implementing website", correct: false},
+            { text:"d. a and b", correct: false}  
+            ],
     },
     
     {
-      question: "When is web application security needed?",
-      options: ["a. sometimes", "b. always", "c. never"],
-      answer: "b.always"
+        Question: "How to practice web application security?",
+        { text: "a. enforce authorization", correct: true},
+        { text: "b. unsecure website", correct: false},
+        { text: "c. using unecrypted website", correct: false},
+],
     },
-    
     {
-    question: "Why web application security is crucial?",
-    options: ["a.preventing attacks", "b.protecting sensitive data", "c.implementing website", "d. a and b"],
-    answer: "d.a and b"
+        Question:"Fill in the blank, what is web application security requirements?",
+        { text: "Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)", correct: true},
 
+],
     },
+   ]; 
+
     
-    {
-    question: "How to practice web application security?",
-    options: ["a.enforce authorization", "b.unsecure website", "c.using unecrypted website"],
-    answer: "a.enforce authorization"
-    },
-    
-    {
-    question: "Fill in the blank, what is web application security requirements?",
-    options: [" Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)."
-    },                                  "],
-    answer: "Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)."
-    },
-    
-  ];
   
  // Select the HTML elements
 
