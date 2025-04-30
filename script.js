@@ -1,6 +1,11 @@
 const quizData = [
     
     {
+    question: "What is the capital of France?",
+    options: ["Paris", "Madrid", "Rome", "Berlin"],
+     answer: "Paris"
+    },
+    {
       Question: "What is web application?",
         Answers: [
             { text: "a.the practice of protecting web applications from cyber threats",correct: true},
