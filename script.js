@@ -2,26 +2,26 @@ const quizData = [
     {
       question: "What is web application security?",
       options: ["a. the practice of protecting web applications from cyber threats", "b.building websites", "c. upgrading software"],
-      answer: "the practice of protecting web applications from cyber threats"
+      answer: "a.the practice of protecting web applications from cyber threats"
     },
     
     {
       question: "When is web application security needed?",
       options: ["a. sometimes", "b. always", "c. never"],
-      answer: "always"
+      answer: "b.always"
     },
     
     {
     question: "Why web application security is crucial?",
     options: ["a.preventing attacks", "b.protecting sensitive data", "c.implementing website", "d. a and b"],
-    answer: "a and b"
+    answer: "d.a and b"
 
     },
     
     {
     question: "How to practice web application security?",
     options: ["a.enforce authorization", "b.unsecure website", "c.using unecrypted website"],
-    answer: "enforce authorization"
+    answer: "a.enforce authorization"
     },
     
     {
@@ -35,7 +35,7 @@ const quizData = [
   
   let currentQuestion = 0;
         let score = 0;
-        let timeLeft = 60;
+        let timeLeft = 40;
         let timerInterval;
         const timerEl = document.getElementById('time');
         const questionEl = document.querySelector('.question');
@@ -52,12 +52,14 @@ const quizData = [
                 return;
             }
             clearInterval(timerInterval);
-            timeLeft = 60;
+            timeLeft = 40;
             timerEl.textContent = timeLeft;
             startTimer();
             const currentQuiz = quizData[currentQuestion];
             questionEl.textContent = currentQuiz.question;
-            optionsEl.innerHTML = ''; // Clear previous options
+            optionsEl.innerHTML = ''; 
+            
+            // Clear previous options
             currentQuiz.options.forEach(option => {
                 const button = document.createElement('button');
                 button.classList.add('option');
@@ -107,12 +109,14 @@ const quizData = [
             // Reset variables
             currentQuestion = 0;
             score = 0;
-            timeLeft = 60;
+            timeLeft = 40;
             timerEl.textContent = timeLeft;
 
             // Reset the display
             questionEl.style.display = 'block';
-            optionsEl.style.display = 'flex'; // Ensure options are displayed correctly
+            optionsEl.style.display = 'flex'; 
+            
+            // Ensure options are displayed correctly
             resultEl.style.display = 'none';
             restartBtn.style.display = 'none';
 
@@ -121,7 +125,7 @@ const quizData = [
             loadQuestion();
         });
 
-        
+        //
 
 loadQuestion();
 
