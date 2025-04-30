@@ -1,5 +1,3 @@
-//
-C
 const quizData = [
     {
       Question: "What is web application?",
@@ -9,6 +7,7 @@ const quizData = [
             { text: "c. upgrading software", correct: false},
             ],
     },
+    {
       question: "What is web application security?",
       options: ["a. the practice of protecting web applications from cyber threats", "b.building websites", "c. upgrading software"],
       answer: "a.the practice of protecting web applications from cyber threats"
