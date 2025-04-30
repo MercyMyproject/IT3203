@@ -2,26 +2,26 @@ const quizData = [
     {
       question: "What is web application security?",
       options: ["a. the practice of protecting web applications from cyber threats", "b.building websites", "c. upgrading software"],
-      answer: "a.the practice of protecting web applications from cyber threats"
+      answer: "the practice of protecting web applications from cyber threats"
     },
     
     {
       question: "When is web application security needed?",
       options: ["a. sometimes", "b. always", "c. never"],
-      answer: "b. always"
+      answer: "always"
     },
     
     {
     question: "Why web application security is crucial?",
     options: ["a.preventing attacks", "b.protecting sensitive data", "c.implementing website", "d. a and b"],
-    answer: "d. a and b"
+    answer: "a and b"
 
     },
     
     {
     question: "How to practice web application security?",
     options: ["a.enforce authorization", "b.unsecure website", "c.using unecrypted website"],
-    answer: "a.enforce authorization"
+    answer: "enforce authorization"
     },
     
     {
@@ -45,6 +45,7 @@ const quizData = [
         const restartBtn = document.querySelector('.restart-btn');
 
         // Function to load the question
+
         function loadQuestion() {
             if (currentQuestion >= quizData.length) {
                 endQuiz();
@@ -67,6 +68,7 @@ const quizData = [
         }
 
         // Check the answer
+
         function checkAnswer(selectedOption) {
             if (selectedOption === quizData[currentQuestion].answer) {
                 score++;
@@ -76,6 +78,7 @@ const quizData = [
         }
 
         // Start the timer
+
         function startTimer() {
             timerInterval = setInterval(() => {
                 timeLeft--;
@@ -88,6 +91,7 @@ const quizData = [
         }
 
         // End the quiz and show the results
+
         function endQuiz() {
             clearInterval(timerInterval);
             questionEl.style.display = 'none';
@@ -98,6 +102,7 @@ const quizData = [
         }
 
         // Restart the quiz
+
         restartBtn.addEventListener('click', () => {
             // Reset variables
             currentQuestion = 0;
@@ -112,10 +117,12 @@ const quizData = [
             restartBtn.style.display = 'none';
 
             // Load the first question
+            
             loadQuestion();
         });
 
-        // Initialize the quiz with the first question
+        
+
 loadQuestion();
 
     
