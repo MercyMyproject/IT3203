@@ -51,7 +51,7 @@ const quizData = [
                 return;
             }
             clearInterval(timerInterval);
-            timeLeft = 30;
+            timeLeft = 60;
             timerEl.textContent = timeLeft;
             startTimer();
             const currentQuiz = quizData[currentQuestion];
