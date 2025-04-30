@@ -39,12 +39,16 @@ const quizData = [
         let timerInterval;
         let incorrectAnswers = [];
 
-        const timerEl = document.getElementById('time');
-        const questionEl = document.querySelector('.question');
-        const optionsEl = document.querySelector('.options');
-        const resultEl = document.querySelector('.result');
-        const scoreEl = document.getElementById('score');
-        const restartBtn = document.querySelector('.retry-btn');
+const quizContainer = document.getElementById('quiz');
+const resultContainer = document.getElementById('result');
+const submitButton = document.getElementById('submit');
+const retryButton = document.getElementById('retry');
+const showAnswerButton = document.getElementById('showAnswer');
+
+let currentQuestion = 0;
+let score = 0;
+let incorrectAnswers = [];
+
 
         // Function to load the question
 
