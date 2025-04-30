@@ -1,4 +1,5 @@
 const quizData = [
+    
     {
       Question: "What is web application?",
         Answers: [
@@ -15,8 +16,10 @@ const quizData = [
             { text:"c. never", correct: false},
             ],
     },
+    
     {
-        Question: "Why web application security is crucial? select all that apply",       
+     Question: "Why web application security is crucial? select all that apply", 
+        Answer:[
             { text:"a. preventing attacks", correct: true},
             { text:"b. protecting sensitive data", correct: true},
             { text:"c. implementing website", correct: false},
@@ -26,6 +29,7 @@ const quizData = [
     
     {
         Question: "How to practice web application security?",
+        Answer:[
         { text: "a. enforce authorization", correct: true},
         { text: "b. unsecure website", correct: false},
         { text: "c. using unecrypted website", correct: false},
@@ -33,28 +37,25 @@ const quizData = [
     },
     {
         Question:"Fill in the blank, what is web application security requirements?",
+        Answer:[
         { text: "Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)", correct: true},
 
 ],
     },
    ]; 
-
-    
-  
- // Select the HTML elements
-
+        
+//select html elements
 const questionContainer = document.querySelector(".questions");
 const resultsContainer = document.querySelector(".results");
 const restartButton = document.querySelector("#restart");
 const totalSpan = document.querySelector("#total");
 const correctSpan = document.querySelector("#correct");
 
-// Define variables
+// Define global variables
 let currentQuestionIndex = 0;
 let numCorrect = 0;
 
 // Function to populate the HTML with question and answer options
-
 function showQuestion() {
     const currentQuestion = quizData[currentQuestionIndex];
     questionContainer.innerHTML = `
@@ -73,7 +74,7 @@ function showQuestion() {
     }); 
 }
 
-// Function to check the selected answer
+// Function to check the selected answer and update global variables accordingly
 function checkAnswer(e) {
     const selectedButton = e.target;
     const isCorrect = quizData[currentQuestionIndex].answers.find(answer => answer.text === selectedButton.textContent).correct;
@@ -98,7 +99,6 @@ function showResults() {
 
 // Add event listener to restart the quiz
 restartButton.addEventListener("click", () => {
-    currentQuestionIndex = 0
-
-
+    currentQuestionIndex = 0  
+  
 
