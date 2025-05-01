@@ -5,22 +5,22 @@ const quizData = [
     answer: "the practice of protecting web applications from cyber threats"
     },
     {
-    Question: "When is web application security needed?",
+    question: "When is web application security needed?",
     options: ["sometimes", "always", "never"],
     answer: "always"
     },
     {
-      Question: "Why web application security is crucial? select all that apply?",
+      question: "Why web application security is crucial? select all that apply?",
       options: ["preventing attacks", "protecting sensitive data", "implementing website"],
       answer: "preventing attacks","protecting sensitive data"
     }, 
     {
-     Question: "How to practice web application security",
+     question: "How to practice web application security",
       options: ["enforce authorization", "unsecure website", "using unecrypted website"],
       answer: "enforce authorization"
     },
     {
-        Question:"Fill in the blank, what is web application security requirements?",
+        question:"Fill in the blank, what is web application security requirements?",
         options:[""],
         answer: "Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)"
     },
