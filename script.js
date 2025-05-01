@@ -64,10 +64,11 @@ const questionElement = document.getElementById("question");
   }
   
   function showResult() {
-    quiz.innerHTML = `
-      <h1>Quiz Completed!</h1>
+    quiz.innerHTML = '
+      <h3>Quiz Completed!</h3>
       <p>Your score: ${score}/${quizData.length}</p>
-    `;
+
+    ;
   }
   
   showQuestion();
