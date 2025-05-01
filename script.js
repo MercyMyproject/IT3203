@@ -1,51 +1,32 @@
 const quizData = [
     
     {
-    question: "What is the capital of France?",
-    options: ["Paris", "Madrid", "Rome", "Berlin"],
-     answer: "Paris"
+    question: "What is web application?",
+    options: ["the practice of protecting web applications from cyber threats", "building websites", "upgrading software"],
+    answer: "the practice of protecting web applications from cyber threats"
     },
     {
-      Question: "What is web application?",
-        Answers: [
-            { text: "a.the practice of protecting web applications from cyber threats",correct: true},
-            { text: "b.building websites", correct: false},
-            { text: "c. upgrading software", correct: false},
-            ],
+    Question: "When is web application security needed?",
+    options: ["sometimes", "always", "never"],
+    answer: "always"
     },
     {
-      Question: "When is web application security needed?",
-        Answer:[
-            { text:"a. sometimes", correct: false},
-            { text:"b. always", correct: true},
-            { text:"c. never", correct: false},
-            ],
+      Question: "Why web application security is crucial? select all that apply?",
+      options: [" preventing attacks", "protecting sensitive data", "implementing website"],
+      answer: "preventing attacks","protecting sensitive data"
     },
-    
     {
-     Question: "Why web application security is crucial? select all that apply", 
-        Answer:[
-            { text:"a. preventing attacks", correct: true},
-            { text:"b. protecting sensitive data", correct: true},
-            { text:"c. implementing website", correct: false},
-            { text:"d. a and b", correct: false}  
-            ],
-    },
-    
+        
     {
-        Question: "How to practice web application security?",
-        Answer:[
-        { text: "a. enforce authorization", correct: true},
-        { text: "b. unsecure website", correct: false},
-        { text: "c. using unecrypted website", correct: false},
-],
+     Question: "How to practice web application security",
+      options: ["enforce authorization", "unsecure website", "using unecrypted website"],
+      answer: "enforce authorization"
+        
     },
     {
         Question:"Fill in the blank, what is web application security requirements?",
-        Answer:[
-        { text: "Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)", correct: true},
-
-],
+        options:[""],
+        answer: "Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)"
     },
    ]; 
         
