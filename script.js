@@ -12,16 +12,13 @@ const quizData = [
     },
     {
       Question: "Why web application security is crucial? select all that apply?",
-      options: [" preventing attacks", "protecting sensitive data", "implementing website"],
+      options: ["preventing attacks", "protecting sensitive data", "implementing website"],
       answer: "preventing attacks","protecting sensitive data"
-    },
-    {
-        
+    }, 
     {
      Question: "How to practice web application security",
       options: ["enforce authorization", "unsecure website", "using unecrypted website"],
       answer: "enforce authorization"
-        
     },
     {
         Question:"Fill in the blank, what is web application security requirements?",
@@ -35,6 +32,8 @@ const quizData = [
 const questionElement = document.getElementById("question");
 const optionsElement = document.getElementById("options");
 const submitButton = document.getElementById("submit");
+const submitButton = document.getElementById("restart");
+
   
   let currentQuestion = 0;
   let score = 0;
@@ -71,7 +70,7 @@ const submitButton = document.getElementById("submit");
   
   function showResult() {
     quiz.innerHTML = `
-      <h1>Quiz Completed!</h1>
+      <h3>Quiz Completed!</h3>
       <p>Your score: ${score}/${quizData.length}</p>
     `;
   }
