@@ -1,5 +1,4 @@
 const quizData = [
-    
     {
     question: "What is web application?",
     options: ["the practice of protecting web applications from cyber threats", "building websites", "upgrading software"],
