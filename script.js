@@ -67,7 +67,15 @@ const submitButton = document.getElementById("restart");
       showResult();
     }
   }
-  
+
+ // Restart the quiz
+        restartBtn.addEventListener('click', () => {
+            // Reset variables
+            currentQuestion = 0;
+            score = 0;
+            timeLeft = 30;
+            timerEl.textContent = timeLeft;
+            
   function showResult() {
     quiz.innerHTML = `
       <h3>Quiz Completed!</h3>
