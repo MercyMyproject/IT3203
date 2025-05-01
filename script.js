@@ -26,13 +26,9 @@ const quizData = [
     },
    ]; 
         
-//select html elements
-
 const questionElement = document.getElementById("question");
-const optionsElement = document.getElementById("options");
-const submitButton = document.getElementById("submit");
-const submitButton = document.getElementById("restart");
-
+  const optionsElement = document.getElementById("options");
+  const submitButton = document.getElementById("submit");
   
   let currentQuestion = 0;
   let score = 0;
@@ -66,21 +62,12 @@ const submitButton = document.getElementById("restart");
       showResult();
     }
   }
-
- // Restart the quiz
-        restartBtn.addEventListener('click', () => {
-            // Reset variables
-            currentQuestion = 0;
-            score = 0;
-            timeLeft = 30;
-            timerEl.textContent = timeLeft;
-            
+  
   function showResult() {
     quiz.innerHTML = `
-      <h3>Quiz Completed!</h3>
+      <h1>Quiz Completed!</h1>
       <p>Your score: ${score}/${quizData.length}</p>
     `;
   }
   
   showQuestion();
-
