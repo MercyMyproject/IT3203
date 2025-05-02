@@ -1,18 +1,22 @@
  const questions = [
-    {
+  {
+     
     question: "What is web application?",
     optionA: "the practice of protecting web applications from cyber threats",
     optionB: "building websites", 
     optionC: "upgrading software",
     correctOption: "optionA"
+     
     },
         
     {
+     
     question: "When is web application security needed?",
     optionA: "sometimes",
     optionB: "always",
     optionC: "never",
     correctOption: "optionB"
+     
     },
         
     {
@@ -22,18 +26,24 @@
       optionC: "implementing website",
       correctOption:"optionA and optionB"
     }, 
+  
     {
+     
      question: "How to practice web application security",
      optionsA: "enforce authorization",
      optionB: "unsecure website", 
      optionC: "using unecrypted website",
-    correctOption: "optionA"
+     correctOption: "optionA"
+     
     },
+  
     {
+     
         question:"Fill in the blank, what is web application security requirements?",
         options:["------"],
         answer: "Applications must validate all user input and block harmful data to prevent attacks like SQL injection and cross-site scripting(XSS)"
     }
+  
    ]
 
 let shuffledQuestions = [] //empty array to hold shuffled 
@@ -130,7 +140,7 @@ function handleNextQuestion() {
     unCheckRadioButtons()
     
     setTimeout(() => {
-        if (indexNumber <= 6) {
+        if (indexNumber <= 5) {
             
 //displays next question 
             
@@ -167,15 +177,15 @@ function handleEndGame() {
     let remarkColor = null
 
     // condition check for player remark and remark color
-    if (playerScore <= 3) {
+    if (playerScore <= 1) {
         remark = "Bad Grades, Keep Practicing."
         remarkColor = "red"
     }
-    else if (playerScore >= 4 && playerScore < 7) {
+    else if (playerScore >= 3 && playerScore < 7) {
         remark = "Average Grades, You can do better."
         remarkColor = "orange"
     }
-    else if (playerScore >= 7) {
+    else if (playerScore >= 5) {
         remark = "Excellent, Keep the good work going."
         remarkColor = "green"
     }
