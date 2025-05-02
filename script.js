@@ -27,8 +27,10 @@ const quizData = [
    ]; 
         
 const questionElement = document.getElementById("question");
-  const optionsElement = document.getElementById("options");
-  const submitButton = document.getElementById("submit");
+const optionsElement = document.getElementById("options");
+const submitButton = document.getElementById("submit");
+const restartButton = document.getElementById("submit");
+
   
   let currentQuestion = 0;
   let score = 0;
